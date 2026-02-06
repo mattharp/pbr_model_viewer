@@ -1,0 +1,13 @@
+# Core dependencies
+PyQt5>=5.15
+PyOpenGL>=3.1
+numpy>=1.20
+Pillow>=9.0
+opencv-contrib-python>=4.5
+
+# GLB/glTF support
+trimesh[easy]>=3.20
+
+# HDR environment maps (additional optional loaders)
+# imageio>=2.20                 # alternative HDR loader
+# OpenEXR>=1.3                  # EXR-specific loader
