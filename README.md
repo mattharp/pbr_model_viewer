@@ -4,6 +4,8 @@ A desktop 3D model viewer built with Python, PyQt5, and OpenGL. Supports OBJ and
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue) ![License](https://img.shields.io/badge/License-MIT-green)
 
+![PBR Model Viewer](https://mattgraphics.com/pics/pbr_viewer.png)
+
 ---
 
 ## Features
