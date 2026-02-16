@@ -426,11 +426,11 @@ class CollapsiblePanel(QWidget):
         
         # Brightness slider
         slider_container = QHBoxLayout()
-        self.brightness_value_input = self._create_value_input("0.3", 0.1, 2.0, 1)
+        self.brightness_value_input = self._create_value_input("0.3", 0.0, 2.0, 1)
         self.brightness_value_input.editingFinished.connect(self._on_brightness_input)
         
         self.brightness_slider = QSlider(Qt.Horizontal)
-        self.brightness_slider.setMinimum(10)
+        self.brightness_slider.setMinimum(0)
         self.brightness_slider.setMaximum(200)
         self.brightness_slider.setValue(30)  # Default 0.3
         self.brightness_slider.setStyleSheet("""
