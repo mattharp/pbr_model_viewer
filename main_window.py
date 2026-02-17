@@ -10,6 +10,7 @@ from PyQt5.QtCore import QTimer
 
 from obj_loader import OBJModel
 from glb_loader import GLBModel, is_glb_file
+from fbx_loader import FBXModel, is_fbx_file, UFBX_AVAILABLE
 from gl_widget import GLWidget
 from control_panel import CollapsiblePanel
 
@@ -45,7 +46,10 @@ class MainWindow(QMainWindow):
         """Load model, auto-detecting format."""
         file_ext = Path(model_path).suffix.lower()
         
-        if is_glb_file(model_path):
+        if is_fbx_file(model_path):
+            print(f"Detected FBX file")
+            return FBXModel(model_path, flip_yz=False)
+        elif is_glb_file(model_path):
             print(f"Detected GLB/glTF file")
             return GLBModel(model_path, flip_yz=False)
         else:
@@ -59,7 +63,7 @@ class MainWindow(QMainWindow):
             self,
             "Open 3D Model",
             "",
-            "3D Models (*.obj *.glb *.gltf);;OBJ Files (*.obj);;GLB Files (*.glb *.gltf);;All Files (*.*)"
+            "3D Models (*.obj *.glb *.gltf *.fbx);;OBJ Files (*.obj);;GLB Files (*.glb *.gltf);;FBX Files (*.fbx);;All Files (*.*)"
         )
         
         if not filename:

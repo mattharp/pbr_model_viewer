@@ -28,6 +28,7 @@ def main():
         print("  OBJ  - Wavefront OBJ (native support)")
         print("  GLB  - glTF Binary (with textures/materials)")
         print("  glTF - GL Transmission Format")
+        print("  FBX  - Autodesk FBX (via ufbx, with PBR materials)")
         print("\nNo model specified \u2014 launching empty viewer.")
         print("Use the Open button in the control panel to load a model.\n")
     
